@@ -330,11 +330,9 @@ def normalize_sentence(sentence):
   # Punctuation marks to look out for
   punctuation = [",", ".", "!", "?"]
 
-  # Trim leading spaces
+  # Trim start tags and leading spaces
+  sentence = re.sub(r'<s>', "", sentence)
   sentence = sentence.strip()
-
-  # Trim start tags
-  sentence = sentence[8:]
 
   # Capitalize first letter of sentence
   sentence = sentence[0].upper() + sentence[1:]
